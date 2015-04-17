@@ -1,3 +1,6 @@
+" This is a UTF-8 script
+scriptencoding utf-8
+
 " Run Vundle if our VIM version permits it - if not, we're on our own
 if v:version > 703
   set nocompatible              " be iMproved, required
@@ -57,6 +60,9 @@ if v:version > 703
   " Put your non-Plugin stuff after this line
   "
 endif
+
+" File encodings and UTF-8
+set encoding=utf-8
 
 " Windows stuff!
 if has("win32")
