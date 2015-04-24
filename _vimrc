@@ -5,7 +5,7 @@ scriptencoding utf-8
 if v:version > 703
   set nocompatible              " be iMproved, required
   filetype off                  " required
-  
+
   " set the runtime path to include Vundle and initialize
   if has("win32")
     set rtp+=~/vimfiles/bundle/Vundle.vim
@@ -17,7 +17,7 @@ if v:version > 703
   endif
   " let Vundle manage Vundle, required
   Plugin 'gmarik/Vundle.vim'
-  
+
   " Tabular
   Plugin 'godlygeek/tabular'
 
@@ -29,10 +29,10 @@ if v:version > 703
 
   " Fugitive.vim
   Plugin 'tpope/vim-fugitive'
-  
+
   " solarized colors
   Plugin 'altercation/Vim-colors-solarized'
-  
+
   " Better Javascript comprehension
   Plugin 'pangloss/vim-javascript'
 
@@ -41,9 +41,12 @@ if v:version > 703
 
   " CtrlP - Maybe Unite one day?
   Plugin 'kien/ctrlp.vim'
-  
+
+  " Vim-surround
+  Plugin 'tpope/vim-surround.git'
+
   " Keep Plugin commands between vundle#begin/end.
-  
+
   " All of your Plugins must be added before the following line
   call vundle#end()            " required
   filetype plugin indent on    " required
@@ -120,7 +123,6 @@ let g:lightline = {
       \ },
       \ 'component': {
       \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}',
-      \   'bufferline': '%{bufferline#refresh_status()}%{g:bufferline_status_info.before . g:bufferline_status_info.after}'
       \ },
       \ 'component_visible_condition': {
       \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
