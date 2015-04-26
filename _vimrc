@@ -180,6 +180,9 @@ let g:javascript_conceal_super      = "O"
 " Enable solarized colorscheme if available
 try
   set background=dark
+  if !has("gui_running")
+    let g:solarized_termcolors=256
+  endif
   silent! colorscheme solarized
 catch
   colorscheme torte
