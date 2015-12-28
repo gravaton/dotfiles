@@ -78,10 +78,7 @@ if has("win32")
 	behave mswin
 	if has("gui")
         " Definitely need a nice font tho
-		silent! set guifont=Cousine:h11
-        if &guifont != 'Cousine:h11'
-		    set guifont=Consolas:h11
-        endif
+		set guifont=Cousine:h11,Consolas:h11
 	endif
 endif
 
