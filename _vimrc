@@ -110,6 +110,31 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   set hlsearch
 endif
 
+" Enable solarized colorscheme if available
+try
+  " I prefer the dark Solarized
+  set background=dark
+  if !has("gui_running")
+    " We're in a console world here
+    if (&term == "win32")
+      " If we're in the Windows world let's just give up now
+      colorscheme torte
+    elseif (&t_Co == 256)
+      " We have 256 colors so Solarized should be just fine
+      let g:solarized_termcolors=256
+      silent! colorscheme solarized
+    else
+      " Due to our lack of colors, let's step down to the basic 'torte'
+      silent! colorscheme torte
+    endif
+  else
+    " If we're using a gui, just set it to solarized for now
+    silent! colorscheme solarized
+  endif
+catch
+  colorscheme torte
+endtry
+
 " Disable bufferline echoing
 let g:bufferline_echo = 0
 
@@ -177,16 +202,6 @@ let g:javascript_conceal_static     = "."
 let g:javascript_conceal_super      = "O"
 
 
-" Enable solarized colorscheme if available
-try
-  set background=dark
-  if !has("gui_running")
-    let g:solarized_termcolors=256
-  endif
-  silent! colorscheme solarized
-catch
-  colorscheme torte
-endtry
 
 " Enable nice tab completion menu if enabled
 if has('wildmenu')
