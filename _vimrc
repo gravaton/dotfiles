@@ -24,9 +24,6 @@ if v:version > 703
   " lightline
   Plugin 'itchyny/lightline.vim'
 
-  " NERDTree
-  Plugin 'scrooloose/nerdtree'
-
   " Fugitive.vim
   Plugin 'tpope/vim-fugitive'
 
