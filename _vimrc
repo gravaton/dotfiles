@@ -78,7 +78,10 @@ if has("win32")
 	behave mswin
 	if has("gui")
         " Definitely need a nice font tho
-		set guifont=Consolas:h12
+		silent! set guifont=Cousine:h11
+        if &guifont != 'Cousine:h11'
+		    set guifont=Consolas:h11
+        endif
 	endif
 endif
 
@@ -163,7 +166,7 @@ function! NeatFoldText() "{{{2
   return foldtextstart . repeat(foldchar, winwidth(0)-foldtextlength) . foldtextend
 endfunction
 
-set foldtext=CustomFoldText()
+set foldtext=NeatFoldText()
 
 " Javascript concealers
 let g:javascript_conceal_function   = "."
