@@ -1,68 +1,50 @@
 " This is a UTF-8 script
 scriptencoding utf-8
 
-" Run Vundle if our VIM version permits it - if not, we're on our own
-if v:version > 703
-  set nocompatible              " be iMproved, required
-  filetype off                  " required
-
-  " set the runtime path to include Vundle and initialize
-  if has("win32")
-    set rtp+=~/vimfiles/bundle/Vundle.vim
-    let path='~/vimfiles/bundle'
-    call vundle#begin(path)
-  else
-    set rtp+=~/.vim/bundle/Vundle.vim
-    call vundle#begin()
-  endif
-  " let Vundle manage Vundle, required
-  Plugin 'gmarik/Vundle.vim'
-
+call plug#begin()
   " EasyMotion
-  Plugin 'easymotion/vim-easymotion'
+  Plug 'easymotion/vim-easymotion'
 
   " Tabular
-  Plugin 'godlygeek/tabular'
+  Plug 'godlygeek/tabular'
 
   " lightline
-  Plugin 'itchyny/lightline.vim'
+  Plug 'itchyny/lightline.vim'
 
   " Fugitive.vim
-  Plugin 'tpope/vim-fugitive'
+  Plug 'tpope/vim-fugitive'
 
   " solarized colors
-  Plugin 'altercation/Vim-colors-solarized'
+  Plug 'altercation/Vim-colors-solarized'
 
   " Better Javascript comprehension
-  Plugin 'pangloss/vim-javascript'
+  Plug 'pangloss/vim-javascript'
 
   " Bufferline
-  Plugin 'bling/vim-bufferline'
+  Plug 'bling/vim-bufferline'
 
   " CtrlP - Maybe Unite one day?
-  Plugin 'kien/ctrlp.vim'
+  Plug 'kien/ctrlp.vim'
 
   " Vim-surround
-  Plugin 'tpope/vim-surround.git'
+  Plug 'tpope/vim-surround'
+call plug#end()
+" Run Vundle if our VIM version permits it - if not, we're on our own
 
-  " Keep Plugin commands between vundle#begin/end.
+"if v:version > 703
+"  set nocompatible              " be iMproved, required
+"  filetype off                  " required
 
-  " All of your Plugins must be added before the following line
-  call vundle#end()            " required
-  filetype plugin indent on    " required
-  " To ignore plugin indent changes, instead use:
-  "filetype plugin on
-  "
-  " Brief help
-  " :PluginList       - lists configured plugins
-  " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-  " :PluginSearch foo - searches for foo; append `!` to refresh local cache
-  " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-  "
-  " see :h vundle for more details or wiki for FAQ
-  " Put your non-Plugin stuff after this line
-  "
-endif
+" set the runtime path to include Vundle and initialize
+"  if has("win32")
+"    set rtp+=~/vimfiles/bundle/Vundle.vim
+"    let path='~/vimfiles/bundle'
+"    call vundle#begin(path)
+"  else
+"    set rtp+=~/.vim/bundle/Vundle.vim
+"    call vundle#begin()
+"  endif
+"endif
 
 " File encodings and UTF-8
 set encoding=utf-8

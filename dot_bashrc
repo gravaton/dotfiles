@@ -133,4 +133,10 @@ MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 # Add go binary directory to path
 PATH="$HOME/go/bin:$PATH"
 
+# Include FZF if present
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Include JJ if present
+if hash jj 2>/dev/null; then
+    source <(jj util completion bash)
+fi
