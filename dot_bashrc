@@ -140,3 +140,6 @@ PATH="$HOME/go/bin:$PATH"
 if hash jj 2>/dev/null; then
     source <(jj util completion bash)
 fi
+
+# Include any local configuration for this host alone
+[ -f ~/.bashrc.local ] && source ~/.bashrc.local
