@@ -2,6 +2,9 @@
 scriptencoding utf-8
 
 call plug#begin()
+  " Chezmoi
+  Plug 'alker0/chezmoi.vim'
+
   " EasyMotion
   Plug 'easymotion/vim-easymotion'
 
